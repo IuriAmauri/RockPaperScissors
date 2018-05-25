@@ -35,6 +35,11 @@ namespace RockPaperScissors
         public void RunTournament(List<Dictionary<string, string>> brackets)
         {
             CheckBrackets(brackets);
+            Rps_TournamentWinner(brackets);
+        }
+
+        private void Rps_TournamentWinner(List<Dictionary<string, string>> brackets)
+        {
             var matchWinners = new List<KeyValuePair<string, string>>();
 
             foreach (var gamePlays in brackets)
@@ -50,7 +55,7 @@ namespace RockPaperScissors
 
             brackets.Clear();
 
-            for (int i = 0; i < matchWinners.Count() / 2; i++)
+            for (int i = 0; i < (matchWinners.Count() / 2); i++)
             {
                 brackets.Add(AddBracket(matchWinners[i], matchWinners[(i + 1)]));
                 matchWinners.RemoveAt(i);
