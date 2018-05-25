@@ -46,6 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\WrongNumberOfPlayersException.cs" />
     <Compile Include="RockPaperScissors.cs" />
+    <Compile Include="SingleMatch.cs" />
+    <Compile Include="Tournament.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
