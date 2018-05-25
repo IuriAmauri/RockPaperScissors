@@ -55,11 +55,10 @@ namespace RockPaperScissors
 
             brackets.Clear();
 
-            for (int i = 0; i < (matchWinners.Count() / 2); i++)
+            while (matchWinners.Count() > 0)
             {
-                brackets.Add(AddBracket(matchWinners[i], matchWinners[(i + 1)]));
-                matchWinners.RemoveAt(i);
-                matchWinners.RemoveAt(i + 1);
+                brackets.Add(AddBracket(matchWinners[0], matchWinners[1]));
+                matchWinners.RemoveRange(0, 2);
             }
 
             RunTournament(brackets);
