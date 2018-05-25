@@ -22,8 +22,6 @@ namespace RockPaperScissors
 
         public KeyValuePair<string, string> RunMatch(Dictionary<string, string> plays)
         {
-            Console.WriteLine(String.Format("Match: {0}:{1} against {2}:{3}", plays.First().Key, plays.First().Value,
-                                                                              plays.Last().Key, plays.Last().Value));
             var winner = Rps_Game_Winner(plays);
 
             Console.WriteLine(String.Format("Match winner is: {0} - play: {1}", winner.Key, winner.Value));
@@ -34,6 +32,10 @@ namespace RockPaperScissors
         public static KeyValuePair<string, string> Rps_Game_Winner(Dictionary<string, string> plays)
         {
             CheckPlays(plays);
+
+            Console.WriteLine(String.Format("Match: {0}:{1} against {2}:{3}", plays.First().Key, plays.First().Value,
+                                                                              plays.Last().Key, plays.Last().Value));
+
             return CheckWinner(plays);
         }
 
